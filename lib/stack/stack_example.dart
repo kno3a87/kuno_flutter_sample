@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class StackExsample extends StatelessWidget {
-  const StackExsample({
+class StackExample extends StatelessWidget {
+  const StackExample({
     Key? key,
   }) : super(key: key);
 
