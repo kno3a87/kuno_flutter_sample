@@ -11,19 +11,23 @@ class StackExsample extends StatelessWidget {
       appBar: AppBar(
         title: const Text("AppBar"),
       ),
-      body: Stack(
-        children: [
-          SizedBox(
-            height: 100,
-            width: 100,
-            child: ColoredBox(color: Colors.cyan.withAlpha(40)),
-          ),
-          SizedBox(
-            height: 50,
-            width: 150,
-            child: ColoredBox(color: Colors.amber.withAlpha(40)),
-          ),
-        ],
+      body: Padding(
+        padding: const EdgeInsets.all(24.0),
+        child: Stack(
+          fit: StackFit.expand,
+          children: [
+            SizedBox(
+              height: 100,
+              width: 100,
+              child: ColoredBox(color: Colors.cyan.withAlpha(40)),
+            ),
+            SizedBox(
+              height: 50,
+              width: 150,
+              child: ColoredBox(color: Colors.amber.withAlpha(40)),
+            ),
+          ],
+        ),
       ),
     );
   }
