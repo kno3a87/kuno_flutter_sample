@@ -26,9 +26,26 @@ class StackExsample extends StatelessWidget {
               width: 150,
               child: ColoredBox(color: Colors.amber.withAlpha(40)),
             ),
+            CustomPaint(
+              painter: _SamplePainter(),
+            ),
           ],
         ),
       ),
     );
+  }
+}
+
+class _SamplePainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    final paint = Paint()..color;
+    paint.color = Colors.red.withAlpha(40);
+    canvas.drawCircle(const Offset(0, 0), 25, paint);
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter oldDelegate) {
+    return true;
   }
 }
