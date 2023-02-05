@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kuno_flutter_sample/exsample.dart';
+import 'package:kuno_flutter_sample/stack/stack_exsample.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const Exsample(title: 'Flutter Demo Home Page'),
+      home: const StackExsample(),
     );
   }
 }
