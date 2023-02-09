@@ -9,7 +9,7 @@ void main() async {
 
   // 利用可能なカメラのリストから特定のカメラを取得
   // [0]番目はバックカメラ，[1]番目はフロントカメラ
-  final firstCamera = cameras[1];
+  final firstCamera = cameras[0];
   runApp(MyApp(camera: firstCamera));
 }
 
