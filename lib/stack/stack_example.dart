@@ -48,7 +48,17 @@ class StackExampleState extends State<StackExample> {
             child: Center(
               child: Stack(
                 children: [
-                  CameraPreview(_cameraController),
+                  Stack(
+                    fit: StackFit.expand,
+                    children: [
+                      SizedBox(
+                        height: 200,
+                        width: 200,
+                        child: ColoredBox(color: Colors.blue.withAlpha(40)),
+                      ),
+                    ],
+                  ),
+                  // CameraPreview(_cameraController),
                   SizedBox(
                     height: 100,
                     width: 100,
