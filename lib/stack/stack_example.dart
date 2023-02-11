@@ -43,36 +43,39 @@ class StackExampleState extends State<StackExample> {
       body: FutureBuilder(
         future: _cameraController.initialize(),
         builder: (context, snapshot) {
-          return Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: Center(
-              child: Stack(
-                children: [
-                  Stack(
-                    fit: StackFit.expand,
-                    children: [
-                      SizedBox(
-                        height: 200,
-                        width: 200,
-                        child: ColoredBox(color: Colors.blue.withAlpha(40)),
-                      ),
-                    ],
-                  ),
-                  // CameraPreview(_cameraController),
-                  SizedBox(
-                    height: 100,
-                    width: 100,
-                    child: ColoredBox(color: Colors.cyan.withAlpha(40)),
-                  ),
-                  SizedBox(
-                    height: 50,
-                    width: 150,
-                    child: ColoredBox(color: Colors.amber.withAlpha(40)),
-                  ),
-                ],
+          if (snapshot.connectionState == ConnectionState.done) {
+            return Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Center(
+                child: Stack(
+                  children: [
+                    // Stack(
+                    //   fit: StackFit.expand,
+                    //   children: [
+                    //     SizedBox(
+                    //       height: 200,
+                    //       width: 200,
+                    //       child: ColoredBox(color: Colors.blue.withAlpha(40)),
+                    //     ),
+                    //   ],
+                    // ),
+                    CameraPreview(_cameraController),
+                    SizedBox(
+                      height: 100,
+                      width: 100,
+                      child: ColoredBox(color: Colors.cyan.withAlpha(40)),
+                    ),
+                    SizedBox(
+                      height: 50,
+                      width: 150,
+                      child: ColoredBox(color: Colors.amber.withAlpha(40)),
+                    ),
+                  ],
+                ),
               ),
-            ),
-          );
+            );
+          }
+          return const Center(child: CircularProgressIndicator());
         },
       ),
     );
