@@ -35,6 +35,8 @@ class _ExsampleState extends State<Exsample> {
               '$_counter',
               style: Theme.of(context).textTheme.headline4,
             ),
+            const Opa1(),
+            const Opa2(),
           ],
         ),
       ),
@@ -43,6 +45,36 @@ class _ExsampleState extends State<Exsample> {
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ),
+    );
+  }
+}
+
+class Opa1 extends StatelessWidget {
+  const Opa1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const Opacity(
+      opacity: 0.5,
+      child: SizedBox(
+        height: 50,
+        width: 50,
+        child: ColoredBox(color: Colors.red),
+      ),
+    );
+  }
+}
+
+class Opa2 extends StatelessWidget {
+  const Opa2({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    // withOpacity 使うと const ダメぽい
+    return SizedBox(
+      height: 50,
+      width: 50,
+      child: ColoredBox(color: Colors.red.withOpacity(0.5)),
     );
   }
 }
