@@ -16,3 +16,9 @@ class Account {
 
   Account._(this.name, this.age);
 }
+
+/**
+ * 結果
+ * 
+ * シニア
+ */
